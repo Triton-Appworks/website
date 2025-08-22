@@ -1,0 +1,115 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.homepage {
+  align-items: start;
+  background-image: url('../images/nebula.jpg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: start;
+  position: relative;
+  width: 100vw;
+}
+
+/* Overlay to darken background */
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Logo container */
+.logo-container {
+  align-items: top;
+  display: flex;
+  justify-content: center;
+  padding: 5em;
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo image */
+.logo {
+  height: auto;
+  width: 20rem;
+}
+
+.button-container {
+  align-items: bottom;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 0 0 1em 5em;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-button {
+    align-self: end;
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 2s ease-in forwards;
+}
+
+/* Delay for staggered effect */
+.delay {
+  animation-delay: 1s;
+}
+
+/* Zoom-in + fade animation for logo */
+@keyframes zoomInFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.zoom-in {
+  animation: zoomInFade 2s ease-out forwards;
+}
+
+/* Footer styles */
+.footer {
+  animation-delay: 2s; /* fade in after logo animation */
+  animation: fadeIn 2s ease-in forwards;
+  bottom: 1rem;
+  color: #fff;
+  font-size: 0.9rem;
+  opacity: 0; /* start hidden for animation */
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Footer divider */
+.footer.with-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 0.5rem;
+}
