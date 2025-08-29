@@ -1,4 +1,5 @@
 body {
+  background-color: #001321;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -8,13 +9,14 @@ body {
 }
 
 .homepage {
-  align-items: start;
+  align-items: center;
   background-image: url('../images/nebula.jpg');
   background-size: cover;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: start;
+  justify-content: center;
+  opacity: 0; /* start hidden for animation */
   position: relative;
   width: 100vw;
 }
@@ -24,6 +26,7 @@ body {
   background: rgba(0, 0, 0, 0.5);
   height: 100%;
   left: 0;
+  opacity: 0; /* start hidden for animation */
   position: absolute;
   top: 0;
   width: 100%;
@@ -32,10 +35,11 @@ body {
 
 /* Logo container */
 .logo-container {
-  align-items: top;
+  align-items: center;
   display: flex;
+  flex-grow: 0.3;
   justify-content: center;
-  padding: 5em;
+  opacity: 0; /* start hidden for animation */
   position: relative;
   z-index: 2;
 }
@@ -47,20 +51,34 @@ body {
 }
 
 .button-container {
-  align-items: bottom;
+  align-items: top;
   display: flex;
-  flex-grow: 1;
   justify-content: center;
-  padding: 0 0 1em 5em;
+  opacity: 0; /* start hidden for animation */
+  padding: 0 0 7em 0;
+  position: relative;
+  z-index: 2;
+}
+
+.apps-button {
+  align-self: start;
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+.utils-button {
+  align-self: start;
+  display: flex;
   position: relative;
   z-index: 2;
 }
 
 .contact-button {
-    align-self: end;
-    display: flex;
-    position: relative;
-    z-index: 2;
+  align-self: start;
+  display: flex;
+  position: relative;
+  z-index: 2;
 }
 
 /* Fade-in animation */
@@ -70,12 +88,27 @@ body {
 }
 
 .fade-in {
-  animation: fadeIn 2s ease-in forwards;
+  animation: fadeIn 1s ease-in forwards;
 }
 
-/* Delay for staggered effect */
-.delay {
+.fade-in-delay1s {
+  animation: fadeIn 2s ease-in forwards;
   animation-delay: 1s;
+}
+
+.fade-in-delay2s {
+  animation: fadeIn 2s ease-in forwards;
+  animation-delay: 2s;
+}
+
+.fade-in-delay3s {
+  animation: fadeIn 2s ease-in forwards;
+  animation-delay: 3s;
+}
+
+.fade-in-delay4s {
+  animation: fadeIn 2s ease-in forwards;
+  animation-delay: 4s;
 }
 
 /* Zoom-in + fade animation for logo */
@@ -90,14 +123,23 @@ body {
   }
 }
 
-.zoom-in {
+.zoom-in-delay1s {
   animation: zoomInFade 2s ease-out forwards;
+  animation-delay: 1s;
+}
+
+.zoom-in-delay2s {
+  animation: zoomInFade 2s ease-out forwards;
+  animation-delay: 2s;
+}
+
+.zoom-in-delay3s {
+  animation: zoomInFade 2s ease-out forwards;
+  animation-delay: 3s;
 }
 
 /* Footer styles */
 .footer {
-  animation-delay: 2s; /* fade in after logo animation */
-  animation: fadeIn 2s ease-in forwards;
   bottom: 1rem;
   color: #fff;
   font-size: 0.9rem;
@@ -106,10 +148,4 @@ body {
   text-align: center;
   width: 100%;
   z-index: 2;
-}
-
-/* Footer divider */
-.footer.with-divider {
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  padding-top: 0.5rem;
 }
